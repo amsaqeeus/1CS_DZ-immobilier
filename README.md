@@ -1,99 +1,239 @@
-🏢 1CS DZ-Immobilier
+# 🏠 1CS DZ-Immobilier
 
-1CS DZ-Immobilier is a full-stack real estate management and listing platform tailored for property listings, rentals, and sales. Built with a Node.js Express backend API and a modern web interface, it offers key functionalities for handling property data, uploading property images, managing user listings, and handling client inquiries.
-🛠️ Tech Stack & Features
-Backend Stack
+A modern full-stack real estate management platform developed to simplify property listing, management, and client interactions. The application enables users to browse, publish, update, and manage real estate listings while providing administrators with tools to efficiently manage platform content.
 
-    Runtime Environment: Node.js
+The project was developed using **Node.js** and **Express.js** for the backend and follows a RESTful architecture to ensure scalability and maintainability.
 
-    Web Framework: Express.js
+---
 
-    Database / Models: Node/MongoDB or SQL integration
+# 📌 Features
 
-    Authentication & Security: bcrypt for secure password hashing & JWT / session management
+### 🏘️ Property Management
+- Create new property listings
+- Update existing listings
+- Delete properties
+- View detailed property information
+- Support for apartments, villas, houses, land, and commercial properties
 
-    File & Image Uploads: busboy / multer handling multipart form data (supports image uploads like PNG/JPEG)
+### 🖼️ Image Upload
+- Upload multiple property images
+- Secure image storage
+- Image serving through the backend
 
-    Environment Configuration: Support for _config.yml and .env variables
+### 👤 User Authentication
+- User registration and login
+- Password encryption using **bcrypt**
+- Secure authentication using **JWT**
 
-Key Features
+### 📦 REST API
+- RESTful API architecture
+- JSON request/response handling
+- Structured routing for properties, users, and authentication
 
-    🏠 Property Management: Create, view, update, and remove property listings (apartments, villas, land, etc.).
+### ⚙️ Backend Configuration
+- Environment variable support
+- Configurable server settings
+- Easy deployment configuration
 
-    🖼️ Image Management: Upload and serve high-resolution property pictures.
+---
 
-    🔒 User Authentication: Secure password hashing using native bcrypt binaries.
+# 🛠️ Technology Stack
 
-    📦 RESTful API: Structured API endpoints handling data streaming (busboy/readable-stream) and JSON body parsing.
+## Backend
+- Node.js
+- Express.js
 
-📂 Directory Structure
-Plaintext
+## Database
+- MongoDB *(or SQL depending on deployment configuration)*
 
+## Authentication
+- JWT (JSON Web Token)
+- bcrypt
+
+## File Upload
+- Multer
+- Busboy
+
+## Configuration
+- `.env`
+- `_config.yml`
+
+---
+
+# 📂 Project Structure
+
+```text
 1CS_DZ-immobilier-main/
+│
 ├── Backend/
-│   ├── images/              # Stored uploaded property photos and assets
-│   ├── node_modules/        # Installed Node.js dependencies
-│   ├── _config.yml          # Backend configuration settings
-│   ├── package.json         # Dependencies and script definitions
-│   └── package-lock.json    # Locked dependency tree
-├── .codegpt                 # CodeGPT configuration / workspace settings
-└── .gitignore               # Ignored files (node_modules, logs, etc.)
+│   ├── images/                # Uploaded property images
+│   ├── node_modules/          # Project dependencies
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── _config.yml
+│   └── ...
+│
+├── .codegpt
+├── .gitignore
+└── README.md
+```
 
-🚀 Getting Started
+---
 
-Follow these steps to set up and run the backend locally:
-Prerequisites
+# 🚀 Getting Started
 
-    Node.js (v14.x or higher recommended)
+## Prerequisites
 
-    npm (Node Package Manager)
+Before running the project, make sure you have installed:
 
-Installation
+- Node.js (v14 or later)
+- npm
 
-    Clone the repository:
-    Bash
+---
 
-    git clone https://github.com/your-username/1CS_DZ-immobilier.git
-    cd 1CS_DZ-immobilier-main/Backend
+## Installation
 
-    Install backend dependencies:
-    Bash
+Clone the repository:
 
-    npm install
+```bash
+git clone https://github.com/amsaqeeus/1CS_DZ-immobilier.git
 
-    Configure Environment:
-    Update or set up your _config.yml or environment variables for your database connection strings, server port, and secrets.
+cd 1CS_DZ-immobilier-main/Backend
+```
 
-💻 Running the Application
-Development Mode
+Install dependencies:
 
-Start the backend server with auto-reloading enabled (via nodemon):
-Bash
+```bash
+npm install
+```
 
+Configure the application:
+
+Create or update your configuration files:
+
+- `.env`
+- `_config.yml`
+
+Configure:
+
+- Database connection
+- Server port
+- JWT secret
+- Other environment variables
+
+---
+
+# ▶️ Running the Application
+
+## Development Mode
+
+```bash
 npm run dev
+```
 
-(Or run npx nodemon directly inside the Backend directory)
-Production Mode
+or
 
-Start the standard Node.js application server:
-Bash
+```bash
+npx nodemon
+```
 
+---
+
+## Production Mode
+
+```bash
 npm start
+```
 
-📸 Image & File Uploads
+---
 
-    Property images uploaded through forms are saved directly to the Backend/images/ folder.
+# 📸 Image Uploads
 
-    Handled seamlessly using multipart form-data parser utilities (busboy/append-field).
+Property images are uploaded using multipart form-data and stored inside:
 
-🛡️ License & Contributing
+```text
+Backend/images/
+```
 
-    Fork the repository
+Supported image formats include:
 
-    Create your feature branch (git checkout -b feature/AmazingFeature)
+- PNG
+- JPG
+- JPEG
 
-    Commit your changes (git commit -m 'Add some AmazingFeature')
+---
 
-    Push to the branch (git push origin feature/AmazingFeature)
+# 📡 API Overview
 
-    Open a Pull Request
+The backend exposes RESTful endpoints for:
+
+- Authentication
+- User Management
+- Property Listings
+- Image Uploads
+
+Typical operations include:
+
+- `GET` — Retrieve properties
+- `POST` — Create new listings
+- `PUT` — Update existing listings
+- `DELETE` — Remove listings
+
+---
+
+# 🔒 Security
+
+The application implements several security practices, including:
+
+- Password hashing with **bcrypt**
+- JWT-based authentication
+- Environment variable protection
+- Input validation
+- Secure image upload handling
+
+---
+
+# 📈 Future Improvements
+
+- Advanced property search and filtering
+- Favorites and wishlist
+- Interactive maps integration
+- Property booking system
+- Email notifications
+- Admin dashboard
+- Analytics and reporting
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository
+2. Create a new feature branch
+
+```bash
+git checkout -b feature/YourFeature
+```
+
+3. Commit your changes
+
+```bash
+git commit -m "Add new feature"
+```
+
+4. Push to your branch
+
+```bash
+git push origin feature/YourFeature
+```
+
+5. Open a Pull Request
+
+---
+
+# 📄 License
+
+This project was developed for educational purposes as part of a university coursework project.
+
+---
